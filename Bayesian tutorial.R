@@ -161,3 +161,10 @@ ggplot(data, aes(x = coffee_quality, y = productivity)) +
   labs(x = "Coffee Quality", y = "Productivity", color = "Researcher", shape = "Day", 
        title = "Daily productivity based on coffee quality") +
   theme_minimal()
+
+# Assess significance
+library(bayestestR)
+
+equivalence_test(model_fit3, 
+                 range = "default", 
+                 ci = 0.89)
